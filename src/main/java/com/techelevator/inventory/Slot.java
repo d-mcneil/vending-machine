@@ -5,6 +5,7 @@ import com.techelevator.Items.Item;
 public class Slot {
     private String location;
     private Item productInSlot;
+    private int productRemaining = 5;
 
     public Slot(String location, Item productInSlot) {
         this.location = location;

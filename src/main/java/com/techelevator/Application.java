@@ -1,11 +1,13 @@
 package com.techelevator;
 
+import com.techelevator.Menus.MainMenu;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
 
 public class Application {
     public static void main(String[] args) {
         InventoryManager inventoryManager = new InventoryManager();
+        MainMenu mainMenu = new MainMenu();
 
 
         for (Slot slot : inventoryManager.getInventory()) {
@@ -16,5 +18,8 @@ public class Application {
             System.out.println(slot.getProductInSlot().getProductType());
             System.out.println();
         }
+
+        mainMenu.displayMenu();
+
     }
 }
