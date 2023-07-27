@@ -10,9 +10,15 @@ public class DisplayItemMenu extends Menu {
                         .stream()
                         .map(slot ->
                                 slot.getLocation()
-                                        + "\t"
+                                        + "  "
                                         + slot.getProductInSlot().getPrice()
-                                        + "\t"
+                                        + "  "
+                                        + "Remaining: "
+                                        + (slot.getProductRemaining() == 0
+                                            ? "SOLD OUT"
+                                            : slot.getProductRemaining()
+                                                + " ".repeat("SOLD OUT".length() - String.valueOf(slot.getProductRemaining()).length())
+                                        )
                                         + slot.getProductInSlot().getProductName()
                         )
                         .collect(Collectors.toList())

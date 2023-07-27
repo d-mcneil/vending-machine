@@ -19,4 +19,8 @@ public class Slot {
     public Item getProductInSlot() {
         return productInSlot;
     }
+
+    public int getProductRemaining() {
+        return productRemaining;
+    }
 }
