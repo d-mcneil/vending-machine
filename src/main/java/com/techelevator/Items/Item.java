@@ -7,14 +7,14 @@ public abstract class Item implements Vendable
     private String productName;
     private String productType;
     private BigDecimal price;
-    private String slotLocation;
+//    private String slotLocation;
 
-    public Item(String productName, String productType, BigDecimal price, String slotLocation)
+    public Item(String productName, String productType, BigDecimal price)
     {
         this.productName = productName;
         this.productType = productType;
         this.price = price;
-        this.slotLocation = slotLocation;
+//        this.slotLocation = slotLocation;
     }
 
     @Override
@@ -33,9 +33,9 @@ public abstract class Item implements Vendable
         return price;
     }
 
-    // todo: take out if not used
-    @Override
-    public String getSlotLocation() {
-        return slotLocation;
-    }
+//    // todo: take out if not used
+//    @Override
+//    public String getSlotLocation() {
+//        return slotLocation;
+//    }
 }
