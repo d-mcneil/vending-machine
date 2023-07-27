@@ -1,11 +1,11 @@
 package com.techelevator.Menus;
 
-public abstract class MenuParent implements Displayable
+public abstract class Menu implements Displayable
 {
     private String[] menuOptions;
     private String menuMessage;
 
-    public MenuParent(String[] menuOptions, String menuMessage)
+    public Menu(String[] menuOptions, String menuMessage)
     {
         this.menuOptions = menuOptions;
         this.menuMessage = menuMessage;

@@ -1,14 +1,14 @@
 package com.techelevator.Menus;
 
-public class PurchaseMenu extends MenuParent
+public class PurchaseMenu
 {
-    public PurchaseMenu(String[] menuOptions, String menuMessage)
+    public PurchaseMenu()
     {
-        super(menuOptions, menuMessage);
+//        super(new String[] , menuMessage);
     }
-
-    @Override
-    public void displayMenu() {
-
-    }
+// todo: uncomment code and finish
+//    @Override
+//    public void displayMenu() {
+//
+//    }
 }

@@ -5,12 +5,12 @@ import com.techelevator.Items.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.*;
 
 public class InventoryManager {
 //    private Map<Slot, Item> inventory = new HashMap<>();
-    private Set<Slot> inventory = new HashSet<>();
+//    private Set<Slot> inventory = new HashSet<>();
+    private List<Slot> inventory = new ArrayList<>();
 
     public InventoryManager() {
         File inventoryFile = new File("main.csv");
@@ -61,7 +61,7 @@ public class InventoryManager {
 //    }
 
 
-    public Set<Slot> getInventory() {
+    public List<Slot> getInventory() {
         return inventory;
     }
 }

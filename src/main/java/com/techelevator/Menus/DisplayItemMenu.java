@@ -1,13 +1,25 @@
 package com.techelevator.Menus;
 
 import com.techelevator.inventory.InventoryManager;
-import com.techelevator.inventory.Slot;
 
-public class DisplayItemMenu extends MenuParent
-{
-    public DisplayItemMenu(InventoryManager inventoryManager)
-    {
-        super(menuOptions, menuMessage);
+import java.util.stream.Collectors;
+
+public class DisplayItemMenu extends Menu {
+    public DisplayItemMenu(InventoryManager inventoryManager) {
+        super(inventoryManager.getInventory()
+                        .stream()
+                        .map(slot ->
+                                slot.getLocation()
+                                        + "\t"
+                                        + slot.getProductInSlot().getPrice()
+                                        + "\t"
+                                        + slot.getProductInSlot().getProductName()
+                        )
+                        .collect(Collectors.toList())
+                        .toArray(new String[0])
+                , "These are your options to choose from:"
+        );
+//        super(menuOptions, menuMessage);
     }
 
 
@@ -23,11 +35,13 @@ public class DisplayItemMenu extends MenuParent
 //    System.out.println(slot.getProductInSlot().getDispenseMessage());
 
 
-
-}
-
     @Override
     public void displayMenu() {
-
+        for (String option : this.getMenuOptions()) {
+            System.out.println(option);
+        }
+        System.out.println();
+        System.out.println("(1) Purchase");
+        System.out.println("(2) Exit");
     }
 }
