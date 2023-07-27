@@ -37,15 +37,8 @@ public class DisplayItemMenu extends Menu {
     //whole inventory
 
 
-    // displayed when item is chosen
+    // TODO: displayed when item is chosen
 //    System.out.println(slot.getProductInSlot().getDispenseMessage());
 
 
-    @Override
-    public void displayMenu() {
-        for (String option : this.getMenuOptions()) {
-            System.out.println(option);
-        }
-        System.out.println();
-    }
 }

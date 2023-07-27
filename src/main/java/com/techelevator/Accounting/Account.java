@@ -15,6 +15,10 @@ public class Account
         this.balance = this.balance.add(BigDecimal.valueOf(moneyToAdd));
     }
 
+    public void deductFromBalance(BigDecimal moneyToDeduct) {
+        this.balance = this.balance.subtract(moneyToDeduct);
+    }
+
     public boolean isNextItemDiscounted() {
         return isNextItemDiscounted;
     }

@@ -6,6 +6,7 @@ import com.techelevator.Menus.MainMenu;
 import com.techelevator.Menus.Menu;
 import com.techelevator.Menus.PurchaseMenu;
 import com.techelevator.inventory.InventoryManager;
+import com.techelevator.inventory.Slot;
 
 import java.awt.*;
 import java.util.Scanner;
@@ -20,6 +21,7 @@ public class VendingMachine {
     //    private Menu purchaseMenu = new PurchaseMenu(account);
     private String userInput = "";
     String userPurchasingInput = "";
+    String userDispensingInput = "";
     private final String CHOICE_ONE = "1";
     private final String CHOICE_TWO = "2";
     private final String CHOICE_THREE = "3";
@@ -36,13 +38,13 @@ public class VendingMachine {
         while (true) { // MAIN MENU LOOP
             do {
                 System.out.println("\n\n\nMAIN MENU");
-                mainMenu.displayMenu(); // START USER AT MAIN MENU
+                System.out.println(mainMenu.getMenuDisplayString()); // START USER AT MAIN MENU
                 userInput = userInputScanner.nextLine();
             } while (!userInput.equals(CHOICE_ONE) && !userInput.equals(CHOICE_TWO) && !userInput.equals(CHOICE_THREE));
 
             switch (userInput) {
                 case CHOICE_ONE:
-                    displayItemMenu.displayMenu();
+                    System.out.println(displayItemMenu.getMenuDisplayString());
                     break;
                 case CHOICE_TWO:
                     purchasingLoop();
@@ -64,16 +66,12 @@ public class VendingMachine {
 
     private void purchasingLoop() {
         while (true) {
+            userPurchasingInput = "";
             do {
                 System.out.println("\n\n\n\nPURCHASING MENU");
-                new PurchaseMenu(account).displayMenu(); // START USER AT PURCHASING MENU
+                System.out.println(new PurchaseMenu(account).getMenuDisplayString()); // START USER AT PURCHASING MENU
                 userPurchasingInput = userInputScanner.nextLine();
-            } while (!userInput.equals(CHOICE_ONE) && !userInput.equals(CHOICE_TWO) && !userInput.equals(CHOICE_THREE));
-
-
-
-
-
+            } while (!userPurchasingInput.equals(CHOICE_ONE) && !userPurchasingInput.equals(CHOICE_TWO) && !userPurchasingInput.equals(CHOICE_THREE));
 
             // 1 = feed money
             // 2 = select product
@@ -84,34 +82,19 @@ public class VendingMachine {
                     feedMoney();
                     break;
                 case CHOICE_TWO:
+                    dispensingLoop();
                     break;
-
                 case CHOICE_THREE:
+                    // finish transaction
                     return;
-//                    break;
             }
-//            break;
-            /*
-             * while (purchasing)
-             * {
-             *       new PurchaseMenu(account).displayMenu();
+
+
+/*
              *       switch (userInput)
              *       {
-             *           case CHOICE_ONE:
-             *               feedMoney;
-             *               break;
              *           case CHOICE_TWO:
-             *               displayItemMenu.displayMenu()
-             *               sout("enter an item code);
-             *               userInput = scanner.nextLine();
-             *               if (valid)
-             *               {
-             *                   dispense();
-             *                       if (LocalDate.now().getMonth == august) {
-             *                           if (nextItemSalePrice) {
              *
-             *                   sout(dispenseMessage);
-             *               }
              *               else if (invalid || sold out)
              *               {
              *                   return to purchaseMenu;
@@ -126,19 +109,96 @@ public class VendingMachine {
         }
     }
 
+    private void dispensingLoop() {
+        userDispensingInput = "";
+
+        System.out.println("\n\n\n\n");
+        System.out.println(displayItemMenu.getMenuDisplayString());
+        do {
+            System.out.print("\nEnter the code for the item you wish to purchase: ");
+            userDispensingInput = userInputScanner.nextLine().toLowerCase();
+        } while (!userDispensingInput.matches("[a-zA-z]{1}[1-9]{1}"));
+
+        for (Slot slot : inventoryManager.getInventory()) {
+            if (userDispensingInput.equals(slot.getLocation().toLowerCase())) {
+                if (slot.getProductRemaining() > 0) {
+                    if (account.getBalance().compareTo(slot.getProductInSlot().getPrice()) >= 0) {
+                        System.out.println(slot.getProductInSlot().getDispenseMessage());
+                        account.deductFromBalance(slot.getProductInSlot().getPrice());
+                    } else {
+                        System.out.println("Sorry, you haven't fed in enough money to purchase that item. Please add more money.");
+                    }
+                } else {
+                    System.out.println("Sorry, that product is sold out.");
+                }
+            } else {
+                System.out.println("Sorry, that isn't a valid product code.");
+            }
+        }
+
+    }
+
+/*
+ displayItemMenu.displayMenu()
+         *               sout("enter an item code);
+                                      *               userInput = scanner.nextLine();
+             *               if (valid)
+            *               {
+             *                   dispense();
+             *                       if (LocalDate.now().getMonth == august) {
+             *                           if (nextItemSalePrice) {
+             *
+             *                   sout(dispenseMessage);
+             *               }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void feedMoney() {
         int moneyToAdd = 0;
         while (true) {
             System.out.println("Enter the amount of money to add:");
             if (userInputScanner.hasNextInt()) {
-                moneyToAdd = userInputScanner.nextInt();
+                moneyToAdd = Integer.parseInt(userInputScanner.nextLine());
                 if (moneyToAdd > 0) {
                     account.feedMoney(moneyToAdd);
                     break;
                 }
             } else {
-                userInputScanner.next();
+                userInputScanner.nextLine();
             }
         }
     }
