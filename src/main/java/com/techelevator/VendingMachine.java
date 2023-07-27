@@ -131,11 +131,11 @@ public class VendingMachine {
                 } else {
                     System.out.println("Sorry, that product is sold out.");
                 }
-            } else {
-                System.out.println("Sorry, that isn't a valid product code.");
+                return;
             }
         }
 
+        System.out.println("Sorry, that isn't a valid product code.");
     }
 
 /*
