@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" modified="2023-07-27T17:32:18.989Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="tDX_4xpXCEP3_YSvS2sX" version="21.6.5" type="device">
+  <diagram name="Página-1" id="j4MyuSTUqzS9JhO4PkNh">
+    <mxGraphModel dx="1819" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-1" target="wYNwhof-NDOQxbOPOiFX-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-1" target="wYNwhof-NDOQxbOPOiFX-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-1" value="Menu&lt;br&gt;&lt;br&gt;- options&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- prompt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-2" value="Sub Menu" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="340" width="120" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-3" target="wYNwhof-NDOQxbOPOiFX-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-3" value="Vendable&lt;br&gt;&lt;br&gt;-dispense()&lt;br&gt;- printMessage()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1121" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-4" value="User Input" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-5" value="Drinks&lt;br&gt;&lt;br&gt;-dispense()&lt;br&gt;- printMessage()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="611" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-6" value="Candy&lt;br&gt;&lt;br&gt;-dispense()&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- printMessage()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="771" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-7" value="Gum&lt;br&gt;&lt;br&gt;-dispense()&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- printMessage()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1101" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-8" value="Munchies&lt;br&gt;&lt;br&gt;-dispense()&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- printMessage()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="935" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-9" target="wYNwhof-NDOQxbOPOiFX-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="751" y="560" />
+              <mxPoint x="751" y="590" />
+              <mxPoint x="671" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.577;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-9" target="wYNwhof-NDOQxbOPOiFX-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.563;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-9" target="wYNwhof-NDOQxbOPOiFX-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.58;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wYNwhof-NDOQxbOPOiFX-9" target="wYNwhof-NDOQxbOPOiFX-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1051" y="560" />
+              <mxPoint x="1051" y="590" />
+              <mxPoint x="1171" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-9" value="Item&lt;br&gt;&lt;br&gt;- slotLocation&lt;br&gt;- productName&lt;br&gt;- price&lt;br&gt;- type" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="851" y="400" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-17" value="Main Menu&lt;br&gt;&lt;br&gt;-displayVendingMachineItems()&lt;br&gt;- new SubMenu -&amp;gt; display items menu&lt;br&gt;&lt;br&gt;-purchase()&lt;br&gt;-&amp;gt; new SubMenu&amp;nbsp;&lt;br&gt;- current money provided&lt;br&gt;1 feed money&lt;br&gt;2 select product&lt;br&gt;3 exit&lt;br&gt;&lt;br&gt;&lt;br&gt;-exit()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="340" width="240" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-20" value="Vending Machine&lt;br&gt;&lt;br&gt;- InventoryManager im&lt;br&gt;- Account account&lt;br&gt;&lt;br&gt;- readInventory()" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="10" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-21" value="Application&lt;br&gt;&lt;br&gt;VendingMachine vm = new VendingMachine" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="10" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-23" value="Slot&lt;br&gt;&lt;br&gt;location&lt;br&gt;&lt;br&gt;productRemaining" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1021" y="220" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-24" value="Log&lt;br&gt;&lt;br&gt;- path" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="220" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-25" value="Account&lt;br&gt;&lt;br&gt;- double money&lt;br&gt;- boolean isNextItemDiscounted" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="220" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-26" value="InventoryManager&lt;br&gt;&lt;br&gt;- Map &amp;lt;Slot, Item&amp;gt; inventory" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="881" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wYNwhof-NDOQxbOPOiFX-27" value="Sales Report&lt;br&gt;&lt;br&gt;- path" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
