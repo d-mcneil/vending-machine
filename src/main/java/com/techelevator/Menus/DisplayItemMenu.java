@@ -47,7 +47,5 @@ public class DisplayItemMenu extends Menu {
             System.out.println(option);
         }
         System.out.println();
-        System.out.println("(1) Purchase");
-        System.out.println("(2) Exit");
     }
 }
