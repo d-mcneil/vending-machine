@@ -1,6 +1,7 @@
 package com.techelevator;
 
 public class CustomConstants {
+    public static final String INVENTORY_FILE_PATH = "main.csv";
     public static final String starChar = "☆";
     public static final String welcomeMessage = "Welcome to Dean and Michel's Vending Machine";
     public static final String exitMessage = "Thanks for Using Dean and Michel's Vending Machine";
@@ -22,6 +23,9 @@ public class CustomConstants {
     public static final String DRINK = "Drink";
     public static final String MUNCHY = "Munchy";
     public static final String GUM = "Gum";
+    public static final String FINISHING_MENU_MESSAGE = "Transaction Completed";
+    public static final String FINISHING_MENU_POST_MESSAGE = "Your new balance is $0.00";
+    public static final String DISPLAY_MENU_MESSAGE = "These are your options to choose from:"; // TODO - remove colon?
 
 
 }

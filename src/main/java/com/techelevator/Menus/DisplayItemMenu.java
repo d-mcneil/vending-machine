@@ -1,5 +1,6 @@
 package com.techelevator.Menus;
 
+import com.techelevator.CustomConstants;
 import com.techelevator.inventory.InventoryManager;
 
 import java.util.stream.Collectors;
@@ -15,7 +16,7 @@ public class DisplayItemMenu extends Menu {
                                         + "  "
                                         + "Remaining: "
                                         + (slot.getProductRemaining() == 0
-                                            ? "SOLD OUT"
+                                            ? "SOLD OUT" // TODO: formatting for sold out
                                             : slot.getProductRemaining()
                                                 + " ".repeat("SOLD OUT".length() - String.valueOf(slot.getProductRemaining()).length())
                                         )
@@ -23,7 +24,7 @@ public class DisplayItemMenu extends Menu {
                         )
                         .collect(Collectors.toList())
                         .toArray(new String[0])
-                , "These are your options to choose from:"
+                , CustomConstants.DISPLAY_MENU_MESSAGE
         );
     }
 }

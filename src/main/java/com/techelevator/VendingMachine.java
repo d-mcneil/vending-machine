@@ -12,13 +12,6 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class VendingMachine {
-    // Initialize
-    private final Scanner userInputScanner = new Scanner(System.in);
-    private final PrintManager printManager = new PrintManager();
-    private final InventoryManager inventoryManager = new InventoryManager();
-    private final Account account = new Account();
-    private final Logger log = new Logger();
-
     // Pull in constants from CustomConstants class
     private final String CHOICE_ONE = CustomConstants.CHOICE_ONE;
     private final String CHOICE_TWO = CustomConstants.CHOICE_TWO;
@@ -30,6 +23,15 @@ public class VendingMachine {
     private final int PURCHASE_MENU_CHARACTER_OFFSET = CustomConstants.PURCHASE_MENU_CHARACTER_OFFSET;
     private final int FINISHING_MENU_CHARACTER_OFFSET = CustomConstants.FINISHING_MENU_CHARACTER_OFFSET;
     private final String PRODUCT_CODE_REGEX_EXPRESSION = CustomConstants.PRODUCT_CODE_REGEX_EXPRESSION;
+    private final String INVENTORY_FILE_PATH = CustomConstants.INVENTORY_FILE_PATH;
+
+    // Initialize
+    private final Scanner userInputScanner = new Scanner(System.in);
+    private final PrintManager printManager = new PrintManager();
+    private final InventoryManager inventoryManager = new InventoryManager(INVENTORY_FILE_PATH);
+    private final Account account = new Account();
+    private final Logger log = new Logger();
+
 
     public void run() {
         printManager.printWelcomeBanner();
