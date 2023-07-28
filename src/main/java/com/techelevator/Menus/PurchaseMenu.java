@@ -4,19 +4,10 @@ import com.techelevator.Accounting.Account;
 
 public class PurchaseMenu extends Menu {
     public PurchaseMenu(Account account) {
-        super(new String[]{"(1) Feed Money", "(2) Select Product", "(3) Finish Transaction"}, "Current Money Provided: $" + account.getBalance());
+        super(
+                new String[]{"(1) Feed Money", "(2) Select Product", "(3) Finish Transaction"}
+                , "Purchasing Menu\nCurrent Money Provided: $" + account.getBalance()
+                ,"Select An Option (1/2/3)", true
+        );
     }
-
-//    @Override
-//    public void displayMenu() {
-//        System.out.println(this.getMenuMessage());
-//        System.out.println();
-//        for(String option : this.getMenuOptions())
-//        {
-//            System.out.println(option);
-//        }
-//        System.out.println();
-//    }
-
-
 }

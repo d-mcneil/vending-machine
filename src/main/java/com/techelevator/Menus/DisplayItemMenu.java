@@ -10,7 +10,7 @@ public class DisplayItemMenu extends Menu {
                         .stream()
                         .map(slot ->
                                 slot.getLocation()
-                                        + "  "
+                                        + "  $"
                                         + slot.getProductInSlot().getPrice()
                                         + "  "
                                         + "Remaining: "
@@ -25,20 +25,5 @@ public class DisplayItemMenu extends Menu {
                         .toArray(new String[0])
                 , "These are your options to choose from:"
         );
-//        super(menuOptions, menuMessage);
     }
-
-
-//    InventoryManager inventoryManager = new InventoryManager();
-//    for(Slot slot : inventoryManager.getInventory()) {}
-    // slotnumber slot.getLocation
-    // name slot.getProductInSlot().getProductName()
-    // price slot.getProductInSlot().getPrice()
-    //whole inventory
-
-
-    // TODO: displayed when item is chosen
-//    System.out.println(slot.getProductInSlot().getDispenseMessage());
-
-
 }

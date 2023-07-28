@@ -6,7 +6,6 @@ import com.techelevator.Menus.Menu;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class VendingMachine {
@@ -36,13 +35,13 @@ public class VendingMachine {
         while (true) { // MAIN MENU LOOP
             do {
                 System.out.println("\n\n\nMAIN MENU");
-                System.out.println(mainMenu.getMenuDisplayString()); // START USER AT MAIN MENU
+                System.out.print(mainMenu.getMenuDisplayString()); // START USER AT MAIN MENU
                 userInput = userInputScanner.nextLine();
             } while (!userInput.equals(CHOICE_ONE) && !userInput.equals(CHOICE_TWO) && !userInput.equals(CHOICE_THREE));
 
             switch (userInput) {
                 case CHOICE_ONE:
-                    System.out.println(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
+                    System.out.print(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
                     break;
                 case CHOICE_TWO:
                     purchasingLoop();
@@ -66,8 +65,8 @@ public class VendingMachine {
         while (true) {
             userPurchasingInput = "";
             do {
-                System.out.println("\n\n\n\nPURCHASING MENU");
-                System.out.println(new PurchaseMenu(account).getMenuDisplayString()); // START USER AT PURCHASING MENU
+                System.out.println("\n\n");
+                System.out.print(new PurchaseMenu(account).getMenuDisplayString()); // START USER AT PURCHASING MENU
                 userPurchasingInput = userInputScanner.nextLine();
             } while (!userPurchasingInput.equals(CHOICE_ONE) && !userPurchasingInput.equals(CHOICE_TWO) && !userPurchasingInput.equals(CHOICE_THREE));
 
@@ -83,8 +82,7 @@ public class VendingMachine {
                     dispensingLoop();
                     break;
                 case CHOICE_THREE:
-                    // finish transaction
-                    System.out.println(new FinishingMenu(account).getMenuDisplayString());
+                    System.out.print(new FinishingMenu(account).getMenuDisplayString());
                     return;
             }
 
@@ -95,7 +93,6 @@ public class VendingMachine {
     private void dispensingLoop() {
         userDispensingInput = "";
 
-        System.out.println("\n\n\n\n");
         System.out.println(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
         do {
             System.out.print("\nEnter the code for the item you wish to purchase: ");
@@ -174,7 +171,7 @@ public class VendingMachine {
     private void feedMoney() {
         int moneyToAdd = 0;
         while (true) {
-            System.out.println("Enter the amount of money to add:");
+            System.out.print("Enter the amount of money to add:");
             if (userInputScanner.hasNextInt()) {
                 moneyToAdd = Integer.parseInt(userInputScanner.nextLine());
                 if (moneyToAdd > 0) {
