@@ -1,10 +1,8 @@
 package com.techelevator;
 
 import com.techelevator.Accounting.Account;
-import com.techelevator.Menus.DisplayItemMenu;
-import com.techelevator.Menus.MainMenu;
+import com.techelevator.Menus.*;
 import com.techelevator.Menus.Menu;
-import com.techelevator.Menus.PurchaseMenu;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
 
@@ -86,6 +84,7 @@ public class VendingMachine {
                     break;
                 case CHOICE_THREE:
                     // finish transaction
+                    System.out.println(new FinishingMenu(account).getMenuDisplayString());
                     return;
             }
 

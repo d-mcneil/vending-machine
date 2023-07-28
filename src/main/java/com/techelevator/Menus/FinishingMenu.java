@@ -1,8 +1,10 @@
 package com.techelevator.Menus;
 
-import java.math.BigDecimal;
+import com.techelevator.Accounting.Account;
 
-public class FinishingMenu
+public class FinishingMenu extends Menu
 {
-    private BigDecimal changeDispensed;
+    public FinishingMenu(Account account) {
+        super(account.makeChange(), "Transaction Completed. Your change is:");
+    }
 }
