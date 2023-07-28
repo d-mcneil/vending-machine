@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 
 public class Gum extends Item
 {
-    public Gum(String productName, String productType, BigDecimal price)
+    public Gum(String productName, BigDecimal price)
     {
-        super(productName, productType, price);
+        super(productName, "Gum", price);
     }
 
     @Override

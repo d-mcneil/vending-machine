@@ -32,16 +32,16 @@ public class InventoryManager {
                 Item productToAdd = null;
                 switch (productType) {
                     case DRINK:
-                        productToAdd = new Drink(productName, productType, price);
+                        productToAdd = new Drink(productName, price);
                         break;
                     case GUM:
-                        productToAdd = new Gum(productName, productType, price);
+                        productToAdd = new Gum(productName, price);
                         break;
                     case MUNCHY:
-                        productToAdd = new Munchy(productName, productType, price);
+                        productToAdd = new Munchy(productName, price);
                         break;
                     case CANDY:
-                        productToAdd = new Candy(productName, productType, price);
+                        productToAdd = new Candy(productName, price);
                         break;
                 }
 //                inventory.put(new Slot(slotLocation, productToAdd), productToAdd); // todo: should it be a map, a set, or just a String with the location?
