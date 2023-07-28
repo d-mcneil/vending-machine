@@ -23,4 +23,9 @@ public class Slot {
     public int getProductRemaining() {
         return productRemaining;
     }
+
+    public void setProductRemaining(int productRemaining)
+    {
+        this.productRemaining = productRemaining;
+    }
 }

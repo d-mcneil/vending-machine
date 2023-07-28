@@ -16,7 +16,7 @@ public class VendingMachine {
     private Scanner userInputScanner = new Scanner(System.in);
     private InventoryManager inventoryManager = new InventoryManager();
     private Menu mainMenu = new MainMenu();
-    private Menu displayItemMenu = new DisplayItemMenu(inventoryManager);
+//    private Menu displayItemMenu = new DisplayItemMenu(inventoryManager);
     private Account account = new Account();
     //    private Menu purchaseMenu = new PurchaseMenu(account);
     private String userInput = "";
@@ -44,7 +44,7 @@ public class VendingMachine {
 
             switch (userInput) {
                 case CHOICE_ONE:
-                    System.out.println(displayItemMenu.getMenuDisplayString());
+                    System.out.println(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
                     break;
                 case CHOICE_TWO:
                     purchasingLoop();
@@ -90,22 +90,6 @@ public class VendingMachine {
             }
 
 
-/*
-             *       switch (userInput)
-             *       {
-             *           case CHOICE_TWO:
-             *
-             *               else if (invalid || sold out)
-             *               {
-             *                   return to purchaseMenu;
-             *               }
-             *           case CHOICE_THREE:
-             *       }
-             * }
-             * */
-
-
-
         }
     }
 
@@ -113,7 +97,7 @@ public class VendingMachine {
         userDispensingInput = "";
 
         System.out.println("\n\n\n\n");
-        System.out.println(displayItemMenu.getMenuDisplayString());
+        System.out.println(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
         do {
             System.out.print("\nEnter the code for the item you wish to purchase: ");
             userDispensingInput = userInputScanner.nextLine().toLowerCase();
@@ -125,6 +109,7 @@ public class VendingMachine {
                     if (account.getBalance().compareTo(slot.getProductInSlot().getPrice()) >= 0) {
                         System.out.println(slot.getProductInSlot().getDispenseMessage());
                         account.deductFromBalance(slot.getProductInSlot().getPrice());
+                        inventoryManager.dispenseInventory(slot);
                     } else {
                         System.out.println("Sorry, you haven't fed in enough money to purchase that item. Please add more money.");
                     }

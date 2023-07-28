@@ -7,6 +7,7 @@ public class Account
     private BigDecimal balance = new BigDecimal(0);
     boolean isNextItemDiscounted = false;
 
+
     public BigDecimal getBalance() {
         return balance;
     }
@@ -22,4 +23,6 @@ public class Account
     public boolean isNextItemDiscounted() {
         return isNextItemDiscounted;
     }
+
+
 }

@@ -19,6 +19,7 @@ public class InventoryManager {
         final String MUNCHY = "Munchy";
         final String CANDY = "Candy";
 
+        // setInventory
         try (Scanner scanner = new Scanner(inventoryFile)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -52,13 +53,13 @@ public class InventoryManager {
         }
     }
 
-    // setInventory
     // dispense/remove from inventory
+    public void dispenseInventory(Slot slot)
+    {
+        slot.setProductRemaining(slot.getProductRemaining()-1);
+    }
 
 
-//    public Map<Slot, Item> getInventory() {
-//        return inventory;
-//    }
 
 
     public List<Slot> getInventory() {
