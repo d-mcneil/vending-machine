@@ -14,5 +14,14 @@ public class CustomConstants {
     public static final int PURCHASE_MENU_CHARACTER_OFFSET = 1;
     public static final int FINISHING_MENU_CHARACTER_OFFSET = 2;
     public static final String PRODUCT_CODE_REGEX_EXPRESSION = "[a-zA-z]{1}[1-9]{1}";
+    public static final String CANDY_DISPENSE_MESSAGE = "Yummy Yummy, So Sweet!";
+    public static final String DRINK_DISPENSE_MESSAGE = "Glug Glug, Yum!";
+    public static final String MUNCHY_DISPENSE_MESSAGE = "Crunch Crunch, Yum!";
+    public static final String GUM_DISPENSE_MESSAGE = "Chew Chew, Yum!";
+    public static final String CANDY = "Candy";
+    public static final String DRINK = "Drink";
+    public static final String MUNCHY = "Munchy";
+    public static final String GUM = "Gum";
+
 
 }

@@ -37,22 +37,4 @@ public abstract class Menu
         return isCommandLinePrompt;
     }
 
-//    @Override
-//    public String getMenuDisplayString() {
-//        StringBuilder stringBuilder = new StringBuilder("\n\n");
-//        stringBuilder.append(this.menuMessage);
-//        stringBuilder.append("\n\n");
-//        for (String option : this.menuOptions) {
-//            stringBuilder.append(option);
-//            stringBuilder.append("\n");
-//        }
-//        stringBuilder.append("\n");
-//        if (postMessage != null) {
-//            stringBuilder.append(this.postMessage);
-//            if (this.isCommandLinePrompt) {
-//                stringBuilder.append(" >>>> ");
-//            }
-//        }
-//        return stringBuilder.toString();
-//    }
 }

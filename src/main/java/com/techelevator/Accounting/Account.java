@@ -1,13 +1,11 @@
 package com.techelevator.Accounting;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Account
 {
     private BigDecimal balance = new BigDecimal(0);
-    boolean isNextItemDiscounted = false;
-    private SaleManager saleManager = new SaleManager();
+    private final SaleManager saleManager = new SaleManager();
 
 
     public BigDecimal getBalance() {
@@ -25,13 +23,8 @@ public class Account
         return amountToDeduct;
     }
 
-    public boolean isNextItemDiscounted() {
-        return isNextItemDiscounted;
-    }
-
     public void setBalanceToZero()
     {
-//        this.balance = new BigDecimal(0);
         this.balance = BigDecimal.ZERO;
     }
 
@@ -54,6 +47,4 @@ public class Account
         change[3] = "Nickels: " + nickels;
         return change;
     }
-
-
 }
