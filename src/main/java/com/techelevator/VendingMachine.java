@@ -3,9 +3,11 @@ package com.techelevator;
 import com.techelevator.Accounting.Account;
 import com.techelevator.Menus.*;
 import com.techelevator.Menus.Menu;
+import com.techelevator.Reports.Logger;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class VendingMachine {
@@ -22,6 +24,7 @@ public class VendingMachine {
     private final String CHOICE_ONE = "1";
     private final String CHOICE_TWO = "2";
     private final String CHOICE_THREE = "3";
+    private Logger log = new Logger();
 
     public void run() {
         // Welcome message
@@ -82,7 +85,9 @@ public class VendingMachine {
                     dispensingLoop();
                     break;
                 case CHOICE_THREE:
+                    log.logPurchase("GIVE CHANGE", account.getBalance(), BigDecimal.ZERO);
                     System.out.print(new FinishingMenu(account).getMenuDisplayString());
+                    account.setBalanceToZero();
                     return;
             }
 
@@ -104,8 +109,10 @@ public class VendingMachine {
                 if (slot.getProductRemaining() > 0) {
                     if (account.getBalance().compareTo(slot.getProductInSlot().getPrice()) >= 0) {
                         System.out.println(slot.getProductInSlot().getDispenseMessage());
-                        account.deductFromBalance(slot.getProductInSlot().getPrice());
+                        // amountToDeduct is actually deducting from the account AND storing amount deducted in variable
+                        BigDecimal amountToDeduct = account.deductFromBalance(slot.getProductInSlot().getPrice());
                         inventoryManager.dispenseInventory(slot);
+                        log.logPurchase(slot.getProductInSlot().getProductName() + " " + slot.getLocation(), amountToDeduct, account.getBalance());
                     } else {
                         System.out.println("Sorry, you haven't fed in enough money to purchase that item. Please add more money.");
                     }
@@ -119,54 +126,6 @@ public class VendingMachine {
         System.out.println("Sorry, that isn't a valid product code.");
     }
 
-/*
- displayItemMenu.displayMenu()
-         *               sout("enter an item code);
-                                      *               userInput = scanner.nextLine();
-             *               if (valid)
-            *               {
-             *                   dispense();
-             *                       if (LocalDate.now().getMonth == august) {
-             *                           if (nextItemSalePrice) {
-             *
-             *                   sout(dispenseMessage);
-             *               }
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private void feedMoney() {
         int moneyToAdd = 0;
@@ -176,6 +135,7 @@ public class VendingMachine {
                 moneyToAdd = Integer.parseInt(userInputScanner.nextLine());
                 if (moneyToAdd > 0) {
                     account.feedMoney(moneyToAdd);
+                    log.logPurchase("FEED MONEY", BigDecimal.valueOf(moneyToAdd), account.getBalance());
                     break;
                 }
             } else {

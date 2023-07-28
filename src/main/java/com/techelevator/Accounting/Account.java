@@ -7,6 +7,7 @@ public class Account
 {
     private BigDecimal balance = new BigDecimal(0);
     boolean isNextItemDiscounted = false;
+    private SaleManager saleManager = new SaleManager();
 
 
     public BigDecimal getBalance() {
@@ -17,12 +18,21 @@ public class Account
         this.balance = this.balance.add(BigDecimal.valueOf(moneyToAdd));
     }
 
-    public void deductFromBalance(BigDecimal moneyToDeduct) {
-        this.balance = this.balance.subtract(moneyToDeduct);
+    public BigDecimal deductFromBalance(BigDecimal moneyToDeduct)
+    {
+        BigDecimal amountToDeduct = saleManager.calculatePrice(moneyToDeduct);
+        this.balance = this.balance.subtract(amountToDeduct);
+        return amountToDeduct;
     }
 
     public boolean isNextItemDiscounted() {
         return isNextItemDiscounted;
+    }
+
+    public void setBalanceToZero()
+    {
+//        this.balance = new BigDecimal(0);
+        this.balance = BigDecimal.ZERO;
     }
 
     public String[] makeChange() {
@@ -43,4 +53,6 @@ public class Account
         change[2] = "Nickels: " + nickels;
         return change;
     }
+
+
 }
