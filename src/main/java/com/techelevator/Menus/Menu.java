@@ -1,6 +1,6 @@
 package com.techelevator.Menus;
 
-public abstract class Menu implements Displayable
+public abstract class Menu
 {
     private final String[] menuOptions;
     private final String menuMessage;
@@ -21,22 +21,38 @@ public abstract class Menu implements Displayable
         this.menuMessage = menuMessage;
     }
 
-    @Override
-    public String getMenuDisplayString() {
-        StringBuilder stringBuilder = new StringBuilder("\n\n");
-        stringBuilder.append(this.menuMessage);
-        stringBuilder.append("\n\n");
-        for (String option : this.menuOptions) {
-            stringBuilder.append(option);
-            stringBuilder.append("\n");
-        }
-        stringBuilder.append("\n");
-        if (postMessage != null) {
-            stringBuilder.append(this.postMessage);
-            if (this.isCommandLinePrompt) {
-                stringBuilder.append(" >>>> ");
-            }
-        }
-        return stringBuilder.toString();
+    public String getMenuMessage() {
+        return menuMessage;
     }
+
+    public String[] getMenuOptions() {
+        return menuOptions;
+    }
+
+    public String getPostMessage() {
+        return postMessage;
+    }
+
+    public boolean isCommandLinePrompt() {
+        return isCommandLinePrompt;
+    }
+
+//    @Override
+//    public String getMenuDisplayString() {
+//        StringBuilder stringBuilder = new StringBuilder("\n\n");
+//        stringBuilder.append(this.menuMessage);
+//        stringBuilder.append("\n\n");
+//        for (String option : this.menuOptions) {
+//            stringBuilder.append(option);
+//            stringBuilder.append("\n");
+//        }
+//        stringBuilder.append("\n");
+//        if (postMessage != null) {
+//            stringBuilder.append(this.postMessage);
+//            if (this.isCommandLinePrompt) {
+//                stringBuilder.append(" >>>> ");
+//            }
+//        }
+//        return stringBuilder.toString();
+//    }
 }

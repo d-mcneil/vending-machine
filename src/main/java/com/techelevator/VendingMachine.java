@@ -4,6 +4,7 @@ import com.techelevator.Accounting.Account;
 import com.techelevator.Menus.*;
 import com.techelevator.Menus.Menu;
 import com.techelevator.Reports.Logger;
+import com.techelevator.console_managers.PrintManager;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
 
@@ -12,64 +13,47 @@ import java.util.Scanner;
 
 public class VendingMachine {
     // Initialize
-    private Scanner userInputScanner = new Scanner(System.in);
-    private InventoryManager inventoryManager = new InventoryManager();
+    private final Scanner userInputScanner = new Scanner(System.in);
+    private final PrintManager printManager = new PrintManager();
+    private final InventoryManager inventoryManager = new InventoryManager();
     private Menu mainMenu = new MainMenu();
-//    private Menu displayItemMenu = new DisplayItemMenu(inventoryManager);
-    private Account account = new Account();
-    //    private Menu purchaseMenu = new PurchaseMenu(account);
-    private String userInput = "";
-    String userPurchasingInput = "";
-    String userDispensingInput = "";
+    private final Account account = new Account();
     private final String CHOICE_ONE = "1";
     private final String CHOICE_TWO = "2";
     private final String CHOICE_THREE = "3";
-    private Logger log = new Logger();
+    private final Logger log = new Logger();
 
     public void run() {
-        // Welcome message
-        System.out.println("************************************************");
-        System.out.println("* Welcome to Dean and Michel's Vending Machine *");
-        System.out.println("************************************************");
-        System.out.println();
-
-
+        printManager.printWelcomeBanner();
 
         while (true) { // MAIN MENU LOOP
+            String userInput = "";
             do {
-                System.out.println("\n\n\nMAIN MENU");
-                System.out.print(mainMenu.getMenuDisplayString()); // START USER AT MAIN MENU
+                printManager.printMenu(mainMenu, -1);
                 userInput = userInputScanner.nextLine();
             } while (!userInput.equals(CHOICE_ONE) && !userInput.equals(CHOICE_TWO) && !userInput.equals(CHOICE_THREE));
 
             switch (userInput) {
                 case CHOICE_ONE:
-                    System.out.print(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
+                    printManager.printMenu(new DisplayItemMenu(inventoryManager), 7);
                     break;
                 case CHOICE_TWO:
                     purchasingLoop();
                     break;
                 case CHOICE_THREE: // exit
-                    System.out.println();
-                    System.out.println("******************************************************");
-                    System.out.println("* Thanks for Using Dean and Michel's Vending Machine *");
-                    System.out.println("******************************************************");
+                    printManager.printExitBanner();
                     System.exit(0);
             }
         }
-
-
-
 
 
     }
 
     private void purchasingLoop() {
         while (true) {
-            userPurchasingInput = "";
+            String userPurchasingInput = "";
             do {
-                System.out.println("\n\n");
-                System.out.print(new PurchaseMenu(account).getMenuDisplayString()); // START USER AT PURCHASING MENU
+                printManager.printMenu(new PurchaseMenu(account), 1); // START USER AT PURCHASING MENU
                 userPurchasingInput = userInputScanner.nextLine();
             } while (!userPurchasingInput.equals(CHOICE_ONE) && !userPurchasingInput.equals(CHOICE_TWO) && !userPurchasingInput.equals(CHOICE_THREE));
 
@@ -86,21 +70,18 @@ public class VendingMachine {
                     break;
                 case CHOICE_THREE:
                     log.logPurchase("GIVE CHANGE", account.getBalance(), BigDecimal.ZERO);
-                    System.out.print(new FinishingMenu(account).getMenuDisplayString());
+                    printManager.printMenu(new FinishingMenu(account), 2);
                     account.setBalanceToZero();
                     return;
             }
-
-
         }
     }
 
     private void dispensingLoop() {
-        userDispensingInput = "";
-
-        System.out.println(new DisplayItemMenu(inventoryManager).getMenuDisplayString());
+        String userDispensingInput = "";
+        printManager.printMenu(new DisplayItemMenu(inventoryManager), 7);
         do {
-            System.out.print("\nEnter the code for the item you wish to purchase: ");
+            printManager.printItemCodePrompt();
             userDispensingInput = userInputScanner.nextLine().toLowerCase();
         } while (!userDispensingInput.matches("[a-zA-z]{1}[1-9]{1}"));
 
@@ -108,29 +89,28 @@ public class VendingMachine {
             if (userDispensingInput.equals(slot.getLocation().toLowerCase())) {
                 if (slot.getProductRemaining() > 0) {
                     if (account.getBalance().compareTo(slot.getProductInSlot().getPrice()) >= 0) {
-                        System.out.println(slot.getProductInSlot().getDispenseMessage());
-                        // amountToDeduct is actually deducting from the account AND storing amount deducted in variable
+                        printManager.printDispenseMessage(slot);
+                        // next line is doing 2 things -> actually deducting from the account AND storing amount deducted in variable
                         BigDecimal amountToDeduct = account.deductFromBalance(slot.getProductInSlot().getPrice());
                         inventoryManager.dispenseInventory(slot);
                         log.logPurchase(slot.getProductInSlot().getProductName() + " " + slot.getLocation(), amountToDeduct, account.getBalance());
                     } else {
-                        System.out.println("Sorry, you haven't fed in enough money to purchase that item. Please add more money.");
+                        printManager.printInsufficientFundsMessage();
                     }
                 } else {
-                    System.out.println("Sorry, that product is sold out.");
+                    printManager.printSoldOutProductMessage();
                 }
                 return;
             }
         }
-
-        System.out.println("Sorry, that isn't a valid product code.");
+        printManager.printInvalidProductCodeMessage();
     }
 
 
     private void feedMoney() {
-        int moneyToAdd = 0;
+        int moneyToAdd;
         while (true) {
-            System.out.print("Enter the amount of money to add:");
+            printManager.printFeedMoneyPrompt();
             if (userInputScanner.hasNextInt()) {
                 moneyToAdd = Integer.parseInt(userInputScanner.nextLine());
                 if (moneyToAdd > 0) {
@@ -143,6 +123,5 @@ public class VendingMachine {
             }
         }
     }
-
 
 }

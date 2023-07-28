@@ -47,10 +47,11 @@ public class Account
 
         int nickels = remainder / 5;
 
-        String[] change = new String[3];
-        change[0] = "Quarters: " + quarters;
-        change[1] = "Dimes: " + dimes;
-        change[2] = "Nickels: " + nickels;
+        String[] change = new String[4];
+        change[0] = "Your change is:\n";
+        change[1] = "Quarters: " + quarters;
+        change[2] = "Dimes: " + dimes;
+        change[3] = "Nickels: " + nickels;
         return change;
     }
 
