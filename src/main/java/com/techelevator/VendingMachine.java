@@ -101,7 +101,22 @@ public class VendingMachine {
             userDispensingInput = userInputScanner.nextLine().toLowerCase();
         } while (!userDispensingInput.matches(PRODUCT_CODE_REGEX_EXPRESSION));
 
+        // TODO: would this block below be better than using the doWhile loop here?
+        // TODO: I feel like the behavior is inconsistent
+        // TODO: when nonsense is inputed, the user is simply reprompted
+        // TODO: but when the input is valid (whether or not the purchase can be completed), the user is kicked back to the purchase menu
+        // TODO: if the below block is better, then the method should be renamed, as it's no longer a loop
+//        String userDispensingInput;
+//        printManager.printMenu(new DisplayItemMenu(inventoryManager), DISPLAY_ITEM_MENU_CHARACTER_OFFSET);
+//        printManager.printItemCodePrompt();
+//        userDispensingInput = userInputScanner.nextLine().toLowerCase();
+//        if (!userDispensingInput.matches(PRODUCT_CODE_REGEX_EXPRESSION)) {
+//            printManager.printInvalidProductCodeMessage();
+//            return;
+//        }
+
         for (Slot slot : inventoryManager.getInventory()) {
+            // TODO: simplify by assigning quantities to variables and using techniques from never nesting video
             if (userDispensingInput.equals(slot.getLocation().toLowerCase())) {
                 if (slot.getProductRemaining() > 0) {
                     if (account.getBalance().compareTo(slot.getProductInSlot().getPrice()) >= 0) {
@@ -139,5 +154,4 @@ public class VendingMachine {
             }
         }
     }
-
 }
