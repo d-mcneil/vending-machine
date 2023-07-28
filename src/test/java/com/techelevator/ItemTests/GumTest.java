@@ -29,5 +29,12 @@ public class GumTest
         Assert.assertEquals("Wonka Bar", myGumTest2.getProductName());
         Assert.assertEquals("Caramel Bar", myGumTest3.getProductName());
 
+        Assert.assertEquals(BigDecimal.valueOf(2.95), myGumTest1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.35), myGumTest2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.25), myGumTest3.getPrice());
+
+        Assert.assertEquals("Gum", myGumTest1.getProductType());
+        Assert.assertEquals("Gum", myGumTest2.getProductType());
+        Assert.assertEquals("Gum", myGumTest3.getProductType());
     }
 }
