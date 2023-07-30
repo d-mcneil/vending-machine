@@ -28,6 +28,13 @@ public class DrinkTest
         Assert.assertEquals("7Down", myDrinkTest2.getProductName());
         Assert.assertEquals("Papsi", myDrinkTest3.getProductName());
 
+        Assert.assertEquals(BigDecimal.valueOf(3.55), myDrinkTest1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.25), myDrinkTest2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.45), myDrinkTest3.getPrice());
+
+        Assert.assertEquals("Drink", myDrinkTest1.getProductType());
+        Assert.assertEquals("Drink", myDrinkTest2.getProductType());
+        Assert.assertEquals("Drink", myDrinkTest3.getProductType());
     }
 
 }

@@ -23,5 +23,13 @@ public class MunchyTest {
         Assert.assertEquals("Preengles", myMunchyTest1.getProductName());
         Assert.assertEquals("Stackers", myMunchyTest2.getProductName());
         Assert.assertEquals("Chippos", myMunchyTest3.getProductName());
+
+        Assert.assertEquals(BigDecimal.valueOf(2.35), myMunchyTest1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.65), myMunchyTest2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.85), myMunchyTest3.getPrice());
+
+        Assert.assertEquals("Munchy", myMunchyTest1.getProductType());
+        Assert.assertEquals("Munchy", myMunchyTest2.getProductType());
+        Assert.assertEquals("Munchy", myMunchyTest3.getProductType());
     }
 }

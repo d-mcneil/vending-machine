@@ -6,8 +6,6 @@ public interface Vendable
 {
     String getProductName();
     BigDecimal getPrice();
-//    String getSlotLocation();
     String getProductType();
     String getDispenseMessage();
-
 }

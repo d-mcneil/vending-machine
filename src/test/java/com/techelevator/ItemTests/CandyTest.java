@@ -29,6 +29,13 @@ public class CandyTest
         Assert.assertEquals("Wonka Bar", myCandyTest2.getProductName());
         Assert.assertEquals("Caramel Bar", myCandyTest3.getProductName());
 
+        Assert.assertEquals(BigDecimal.valueOf(2.95), myCandyTest1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.35), myCandyTest2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.25), myCandyTest3.getPrice());
+
+        Assert.assertEquals("Candy", myCandyTest1.getProductType());
+        Assert.assertEquals("Candy", myCandyTest2.getProductType());
+        Assert.assertEquals("Candy", myCandyTest3.getProductType());
     }
 
 

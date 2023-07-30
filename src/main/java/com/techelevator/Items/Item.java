@@ -4,17 +4,15 @@ import java.math.BigDecimal;
 
 public abstract class Item implements Vendable
 {
-    private String productName;
-    private String productType;
-    private BigDecimal price;
-//    private String slotLocation;
+    private final String productName;
+    private final String productType;
+    private final BigDecimal price;
 
     public Item(String productName, String productType, BigDecimal price)
     {
         this.productName = productName;
         this.productType = productType;
         this.price = price;
-//        this.slotLocation = slotLocation;
     }
 
     @Override
@@ -22,7 +20,6 @@ public abstract class Item implements Vendable
         return productName;
     }
 
-    // todo: take out if not used
     @Override
     public String getProductType() {
         return productType;
@@ -32,10 +29,4 @@ public abstract class Item implements Vendable
     public BigDecimal getPrice() {
         return price;
     }
-
-//    // todo: take out if not used
-//    @Override
-//    public String getSlotLocation() {
-//        return slotLocation;
-//    }
 }

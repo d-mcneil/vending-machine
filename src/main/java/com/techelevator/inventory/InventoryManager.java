@@ -10,10 +10,10 @@ import java.util.*;
 public class InventoryManager {
 //    private Map<Slot, Item> inventory = new HashMap<>();
 //    private Set<Slot> inventory = new HashSet<>();
-    private List<Slot> inventory = new ArrayList<>();
+    private final List<Slot> inventory = new ArrayList<>();
 
-    public InventoryManager() {
-        File inventoryFile = new File("main.csv");
+    public InventoryManager(String pathName) {
+        File inventoryFile = new File(pathName);
         final String DRINK = "Drink";
         final String GUM = "Gum";
         final String MUNCHY = "Munchy";
