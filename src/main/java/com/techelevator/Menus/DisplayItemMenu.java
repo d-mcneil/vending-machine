@@ -16,9 +16,9 @@ public class DisplayItemMenu extends Menu {
                                         + "  "
                                         + "Remaining: "
                                         + (slot.getProductRemaining() == 0
-                                            ? "SOLD OUT" // TODO: formatting for sold out
+                                            ? "SOLD OUT "
                                             : slot.getProductRemaining()
-                                                + " ".repeat("SOLD OUT".length() - String.valueOf(slot.getProductRemaining()).length())
+                                                + " ".repeat("SOLD OUT ".length() - String.valueOf(slot.getProductRemaining()).length())
                                         )
                                         + slot.getProductInSlot().getProductName()
                         )

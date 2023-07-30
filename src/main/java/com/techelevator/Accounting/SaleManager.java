@@ -19,7 +19,7 @@ public class SaleManager
     {
         BigDecimal discountedPrice = retailPrice;
 
-        if (LocalDate.now().getMonth() == Month.JULY) // todo: change to august when finished
+        if (LocalDate.now().getMonth() == Month.AUGUST) //
         {
             if( isNextItemDiscounted)
             {

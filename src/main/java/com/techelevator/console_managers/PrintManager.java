@@ -51,7 +51,7 @@ public class PrintManager {
     }
 
     public void printFeedMoneyPrompt() {
-        printCommandPrompt("Enter the amount of money to add");
+        printCommandPrompt("Enter the amount of money to add in whole dollar amounts");
     }
 
     public void printInvalidProductCodeMessage() {

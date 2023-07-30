@@ -44,7 +44,7 @@ public class InventoryManager {
                         productToAdd = new Candy(productName, price);
                         break;
                 }
-//                inventory.put(new Slot(slotLocation, productToAdd), productToAdd); // todo: should it be a map, a set, or just a String with the location?
+
                 inventory.add(new Slot(slotLocation, productToAdd));
 
             }
