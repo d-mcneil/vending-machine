@@ -8,18 +8,21 @@ public class SaleManager
 {
     private boolean isNextItemDiscounted = false;
 
-
     public void alternateDiscount()
     {
         isNextItemDiscounted = !isNextItemDiscounted;
 
     }
 
+    public boolean isNextItemDiscounted() {
+        return isNextItemDiscounted;
+    }
+
     public BigDecimal calculatePrice(BigDecimal retailPrice)
     {
         BigDecimal discountedPrice = retailPrice;
 
-        if (LocalDate.now().getMonth() == Month.AUGUST) //
+        if (LocalDate.now().getMonth() == Month.AUGUST)
         {
             if( isNextItemDiscounted)
             {
@@ -29,6 +32,4 @@ public class SaleManager
         }
         return discountedPrice;
     }
-
-
 }
