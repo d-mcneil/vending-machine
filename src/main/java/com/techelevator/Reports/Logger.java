@@ -24,7 +24,7 @@ public class Logger
         }
         catch(IOException e)
         {
-            //we do not want to display errors to client using the vending machine
+            // we do not want to display errors to client using the vending machine
         }
     }
 

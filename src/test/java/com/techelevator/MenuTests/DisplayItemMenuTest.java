@@ -25,10 +25,10 @@ public class DisplayItemMenuTest {
         Assert.assertNull(menu.getPostMessage());
         Assert.assertFalse(menu.isCommandLinePrompt());
         Assert.assertEquals("These are your options to choose from:", menu.getMenuMessage());
-        Assert.assertEquals("A1  $1.65  Remaining: 5       U-Chews", options[0]);
-        Assert.assertEquals("B4  $3.55  Remaining: 5       Mountain Melter", options[1]);
-        Assert.assertEquals("C3  $2.95  Remaining: 5       Moonpie", options[2]);
-        Assert.assertEquals("D2  $2.35  Remaining: 5       Preengles", options[3]);
+        Assert.assertEquals("A1  $1.65  Remaining: 5        U-Chews", options[0]);
+        Assert.assertEquals("B4  $3.55  Remaining: 5        Mountain Melter", options[1]);
+        Assert.assertEquals("C3  $2.95  Remaining: 5        Moonpie", options[2]);
+        Assert.assertEquals("D2  $2.35  Remaining: 5        Preengles", options[3]);
     }
 
     @Test
@@ -48,10 +48,10 @@ public class DisplayItemMenuTest {
 
         String[] options = menu.getMenuOptions();
 
-        Assert.assertEquals("A1  $1.65  Remaining: 1       U-Chews", options[0]);
-        Assert.assertEquals("B4  $3.55  Remaining: 2       Mountain Melter", options[1]);
-        Assert.assertEquals("C3  $2.95  Remaining: 3       Moonpie", options[2]);
-        Assert.assertEquals("D2  $2.35  Remaining: 4       Preengles", options[3]);
+        Assert.assertEquals("A1  $1.65  Remaining: 1        U-Chews", options[0]);
+        Assert.assertEquals("B4  $3.55  Remaining: 2        Mountain Melter", options[1]);
+        Assert.assertEquals("C3  $2.95  Remaining: 3        Moonpie", options[2]);
+        Assert.assertEquals("D2  $2.35  Remaining: 4        Preengles", options[3]);
     }
 
     @Test
@@ -80,10 +80,10 @@ public class DisplayItemMenuTest {
 
         String[] options = menu.getMenuOptions();
 
-        Assert.assertEquals("A1  $1.65  Remaining: SOLD OUTU-Chews", options[0]);
-        Assert.assertEquals("B4  $3.55  Remaining: SOLD OUTMountain Melter", options[1]);
-        Assert.assertEquals("C3  $2.95  Remaining: SOLD OUTMoonpie", options[2]);
-        Assert.assertEquals("D2  $2.35  Remaining: SOLD OUTPreengles", options[3]);
+        Assert.assertEquals("A1  $1.65  Remaining: SOLD OUT U-Chews", options[0]);
+        Assert.assertEquals("B4  $3.55  Remaining: SOLD OUT Mountain Melter", options[1]);
+        Assert.assertEquals("C3  $2.95  Remaining: SOLD OUT Moonpie", options[2]);
+        Assert.assertEquals("D2  $2.35  Remaining: SOLD OUT Preengles", options[3]);
     }
 }
 
