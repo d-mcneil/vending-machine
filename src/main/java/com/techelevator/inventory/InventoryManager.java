@@ -50,12 +50,16 @@ public class InventoryManager {
             }
         } catch (FileNotFoundException e) {
             System.out.println("There was an error starting up the vending machine. Please try again later.");
-            System.exit(1);
         }
     }
 
-    public void dispenseInventory(Slot slot) {
+    public boolean dispenseInventory(Slot slot) {
+        int productRemaining = slot.getProductRemaining();
+        if (productRemaining == 0) {
+            return false; // no item to dispense, so don't try to dispense
+        }
         slot.setProductRemaining(slot.getProductRemaining() - 1);
+        return true; // product successfully dispensed and slot.productRemaining was successfully decremented
     }
 
     public List<Slot> getInventory() {
