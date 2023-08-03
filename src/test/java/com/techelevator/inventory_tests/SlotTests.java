@@ -1,4 +1,4 @@
-package com.techelevator.InventoryTests;
+package com.techelevator.inventory_tests;
 
 import com.techelevator.items.Candy;
 import com.techelevator.items.Drink;

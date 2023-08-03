@@ -1,4 +1,4 @@
-package com.techelevator.ItemTests;
+package com.techelevator.items_tests;
 
 import com.techelevator.items.Munchy;
 import org.junit.Assert;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class MunchyTest {
+public class MunchyTests {
     @Test
     public void drink_Prints_Correct_Dispensing_Message() {
         Munchy myMunchy = new Munchy("Popcorn", new BigDecimal("1.75"));

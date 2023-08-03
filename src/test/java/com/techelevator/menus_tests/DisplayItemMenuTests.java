@@ -1,4 +1,4 @@
-package com.techelevator.MenuTests;
+package com.techelevator.menus_tests;
 
 import com.techelevator.menus.DisplayItemMenu;
 import com.techelevator.menus.Menu;
@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DisplayItemMenuTest {
+public class DisplayItemMenuTests {
     InventoryManager inventoryManager;
 
     @Before

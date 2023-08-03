@@ -1,4 +1,4 @@
-package com.techelevator.ItemTests;
+package com.techelevator.items_tests;
 
 
 import com.techelevator.items.Gum;
@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class GumTest
+public class GumTests
 {
     @Test
     public void gum_Prints_Correct_Dispensing_Message()

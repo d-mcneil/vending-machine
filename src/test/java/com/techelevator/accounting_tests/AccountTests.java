@@ -1,4 +1,4 @@
-package com.techelevator.AccountingTests;
+package com.techelevator.accounting_tests;
 
 import com.techelevator.accounting.Account;
 import org.junit.Assert;

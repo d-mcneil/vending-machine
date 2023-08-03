@@ -1,4 +1,4 @@
-package com.techelevator.MenuTests;
+package com.techelevator.menus_tests;
 
 import com.techelevator.accounting.Account;
 import com.techelevator.menus.Menu;
@@ -6,7 +6,7 @@ import com.techelevator.menus.PurchaseMenu;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PurchaseMenuTest
+public class PurchaseMenuTests
 {
 
 

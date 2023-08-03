@@ -1,4 +1,4 @@
-package com.techelevator.MenuTests;
+package com.techelevator.menus_tests;
 
 import com.techelevator.accounting.Account;
 import com.techelevator.menus.FinishingMenu;
@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class FinishingMenuTest {
+public class FinishingMenuTests {
     @Test
     public void menu_constructor_creates_menu_with_correct_values(){
         Account account = new Account();

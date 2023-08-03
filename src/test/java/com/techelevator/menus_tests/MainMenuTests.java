@@ -1,11 +1,11 @@
-package com.techelevator.MenuTests;
+package com.techelevator.menus_tests;
 
 import com.techelevator.menus.MainMenu;
 import com.techelevator.menus.Menu;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainMenuTest
+public class MainMenuTests
 {
     @Test
     public void main_menu_constructor_creates_menu_with_correct_values()

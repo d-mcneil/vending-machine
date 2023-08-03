@@ -1,4 +1,4 @@
-package com.techelevator.ItemTests;
+package com.techelevator.items_tests;
 
 
 import com.techelevator.items.Drink;
@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class DrinkTest
+public class DrinkTests
 {
     @Test
     public void drink_Prints_Correct_Dispensing_Message()
