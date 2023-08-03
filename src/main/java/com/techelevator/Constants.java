@@ -1,7 +1,7 @@
 package com.techelevator;
 
 public class Constants {
-    public static final String INVENTORY_FILE_PATH = "inventory_files/main.csv";
+    public static final String INVENTORY_FILE_PATH = "inventory_files/problem.csv";
     // public static final String INVENTORY_FILE_PATH = "inventory_files/alternate.csv";
     // public static final String INVENTORY_FILE_PATH = "inventory_files/problem.csv";
 
@@ -10,6 +10,7 @@ public class Constants {
     public static final String DRINK = "Drink";
     public static final String MUNCHY = "Munchy";
     public static final String GUM = "Gum";
+    public static final String[] ITEM_TYPE_ARRAY = {CANDY, DRINK, MUNCHY, GUM};
     public static final String CANDY_DISPENSE_MESSAGE = "Yummy Yummy, So Sweet!";
     public static final String DRINK_DISPENSE_MESSAGE = "Glug Glug, Yum!";
     public static final String MUNCHY_DISPENSE_MESSAGE = "Crunch Crunch, Yum!";
@@ -52,6 +53,7 @@ public class Constants {
 
 
     public static final int DEFAULT_VENDING_MACHINE_STOCK_PER_ITEM = 5;
+    public static final String INVENTORY_FILE_FIELD_DELIMITER = ",";
 
 
 
