@@ -14,6 +14,15 @@ public class Slot {
         this.productRemaining = Constants.DEFAULT_VENDING_MACHINE_STOCK_PER_ITEM;
     }
 
+    public boolean decrementProductRemaining() { // TODO: test method
+        if (this.productRemaining == 0) {
+            return false; // no item to dispense, so don't decrement count
+        }
+        this.productRemaining--;
+        // product successfully dispensed and this.productRemaining was successfully decremented
+        return true;
+    }
+
     public String getLocation() {
         return location;
     }
@@ -24,9 +33,5 @@ public class Slot {
 
     public int getProductRemaining() {
         return productRemaining;
-    }
-
-    public void setProductRemaining(int productRemaining) { // TODO: replace with decrement product remaining
-        this.productRemaining = productRemaining;
     }
 }

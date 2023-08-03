@@ -54,12 +54,9 @@ public class InventoryManager {
     }
 
     public boolean dispenseInventory(Slot slot) {
-        int productRemaining = slot.getProductRemaining();
-        if (productRemaining == 0) {
-            return false; // no item to dispense, so don't try to dispense
-        }
-        slot.setProductRemaining(slot.getProductRemaining() - 1);
-        return true; // product successfully dispensed and slot.productRemaining was successfully decremented
+        return slot.decrementProductRemaining();
+        // true -> if there was product to dispense and product count was successfully decremented
+        // false -> if there was no product left to dispense
     }
 
     public List<Slot> getInventory() {
