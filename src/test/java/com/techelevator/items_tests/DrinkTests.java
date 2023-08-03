@@ -1,40 +1,44 @@
 package com.techelevator.items_tests;
 
-
 import com.techelevator.items.Drink;
+import com.techelevator.items.Item;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class DrinkTests
-{
-    @Test
-    public void drink_Prints_Correct_Dispensing_Message()
-    {
-        Drink myDrink = new Drink("Mountain Melter", new BigDecimal("3.55"));
+public class DrinkTests {
+    Item item1;
+    Item item2;
+    Item item3;
 
-        Assert.assertEquals("Glug Glug, Yum!", myDrink.getDispenseMessage());
+    @Before
+    public void createItems() {
+        item1 = new Drink("Mountain Melter", BigDecimal.valueOf(3.55));
+        item2 = new Drink("7Down", BigDecimal.valueOf(3.25));
+        item3 = new Drink("Papsi", BigDecimal.valueOf(3.45));
     }
 
     @Test
-    public void drink_constructor()
-    {
-        Drink myDrinkTest1 = new Drink("Mountain Melter", new BigDecimal("3.55"));
-        Drink myDrinkTest2 = new Drink("7Down", new BigDecimal("3.25"));
-        Drink myDrinkTest3 = new Drink("Papsi", new BigDecimal("3.45"));
+    public void constructor_creates_item_with_correct_values() {
+        Assert.assertEquals("Mountain Melter", item1.getProductName());
+        Assert.assertEquals("7Down", item2.getProductName());
+        Assert.assertEquals("Papsi", item3.getProductName());
 
-        Assert.assertEquals("Mountain Melter", myDrinkTest1.getProductName());
-        Assert.assertEquals("7Down", myDrinkTest2.getProductName());
-        Assert.assertEquals("Papsi", myDrinkTest3.getProductName());
+        Assert.assertEquals(BigDecimal.valueOf(3.55), item1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.25), item2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.45), item3.getPrice());
 
-        Assert.assertEquals(BigDecimal.valueOf(3.55), myDrinkTest1.getPrice());
-        Assert.assertEquals(BigDecimal.valueOf(3.25), myDrinkTest2.getPrice());
-        Assert.assertEquals(BigDecimal.valueOf(3.45), myDrinkTest3.getPrice());
-
-        Assert.assertEquals("Drink", myDrinkTest1.getProductType());
-        Assert.assertEquals("Drink", myDrinkTest2.getProductType());
-        Assert.assertEquals("Drink", myDrinkTest3.getProductType());
+        Assert.assertEquals("Drink", item1.getProductType());
+        Assert.assertEquals("Drink", item2.getProductType());
+        Assert.assertEquals("Drink", item3.getProductType());
     }
 
+    @Test
+    public void getDispenseMessage_returns_correct_message() {
+        Assert.assertEquals("Glug Glug, Yum!", item1.getDispenseMessage());
+        Assert.assertEquals("Glug Glug, Yum!", item2.getDispenseMessage());
+        Assert.assertEquals("Glug Glug, Yum!", item3.getDispenseMessage());
+    }
 }

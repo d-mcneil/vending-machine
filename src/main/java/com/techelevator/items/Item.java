@@ -2,14 +2,12 @@ package com.techelevator.items;
 
 import java.math.BigDecimal;
 
-public abstract class Item implements Vendable
-{
+public abstract class Item implements Vendable {
     private final String productName;
     private final String productType;
     private final BigDecimal price;
 
-    public Item(String productName, String productType, BigDecimal price)
-    {
+    public Item(String productName, String productType, BigDecimal price) {
         this.productName = productName;
         this.productType = productType;
         this.price = price;

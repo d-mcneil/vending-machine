@@ -1,35 +1,44 @@
 package com.techelevator.items_tests;
 
 import com.techelevator.items.Munchy;
+import com.techelevator.items.Item;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
 public class MunchyTests {
-    @Test
-    public void drink_Prints_Correct_Dispensing_Message() {
-        Munchy myMunchy = new Munchy("Popcorn", new BigDecimal("1.75"));
+    Item item1;
+    Item item2;
+    Item item3;
 
-        Assert.assertEquals("Crunch Crunch, Yum!", myMunchy.getDispenseMessage());
+    @Before
+    public void createItems() {
+        item1 = new Munchy("Preengles", BigDecimal.valueOf(2.35));
+        item2 = new Munchy("Stackers", BigDecimal.valueOf(2.65));
+        item3 = new Munchy("Chippos", BigDecimal.valueOf(3.85));
     }
 
     @Test
-    public void drink_constructor() {
-        Munchy myMunchyTest1 = new Munchy("Preengles", new BigDecimal("2.35"));
-        Munchy myMunchyTest2 = new Munchy("Stackers", new BigDecimal("2.65"));
-        Munchy myMunchyTest3 = new Munchy("Chippos", new BigDecimal("3.85"));
+    public void constructor_creates_item_with_correct_values() {
+        Assert.assertEquals("Preengles", item1.getProductName());
+        Assert.assertEquals("Stackers", item2.getProductName());
+        Assert.assertEquals("Chippos", item3.getProductName());
 
-        Assert.assertEquals("Preengles", myMunchyTest1.getProductName());
-        Assert.assertEquals("Stackers", myMunchyTest2.getProductName());
-        Assert.assertEquals("Chippos", myMunchyTest3.getProductName());
+        Assert.assertEquals(BigDecimal.valueOf(2.35), item1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(2.65), item2.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.85), item3.getPrice());
 
-        Assert.assertEquals(BigDecimal.valueOf(2.35), myMunchyTest1.getPrice());
-        Assert.assertEquals(BigDecimal.valueOf(2.65), myMunchyTest2.getPrice());
-        Assert.assertEquals(BigDecimal.valueOf(3.85), myMunchyTest3.getPrice());
+        Assert.assertEquals("Munchy", item1.getProductType());
+        Assert.assertEquals("Munchy", item2.getProductType());
+        Assert.assertEquals("Munchy", item3.getProductType());
+    }
 
-        Assert.assertEquals("Munchy", myMunchyTest1.getProductType());
-        Assert.assertEquals("Munchy", myMunchyTest2.getProductType());
-        Assert.assertEquals("Munchy", myMunchyTest3.getProductType());
+    @Test
+    public void getDispenseMessage_returns_correct_message() {
+        Assert.assertEquals("Crunch Crunch, Yum!", item1.getDispenseMessage());
+        Assert.assertEquals("Crunch Crunch, Yum!", item2.getDispenseMessage());
+        Assert.assertEquals("Crunch Crunch, Yum!", item3.getDispenseMessage());
     }
 }
