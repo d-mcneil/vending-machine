@@ -47,6 +47,9 @@ public class Constants {
     public static final String FEED_MONEY = "FEED MONEY:";
 
 
+    public static final int DEFAULT_VENDING_MACHINE_STOCK_PER_ITEM = 5;
+
+
 
 
 }

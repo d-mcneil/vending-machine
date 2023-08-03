@@ -11,23 +11,24 @@ import java.math.BigDecimal;
 
 public class SlotTests {
     @Test
-    public void constructor_creates_object_with_correct_values(){
-        Item item1 = new Candy("Snykkers", new BigDecimal("4.25"));
-        Item item2 = new Drink("Mountain Melter", new BigDecimal("3.55"));
-        Slot slot1 = new Slot("A1", item1);
-        Slot slot2 = new Slot("D3", item2);
+    public void constructor_creates_slot_with_correct_values(){
+        Slot slot1 = new Slot("A1", new Candy("Snykkers", BigDecimal.valueOf(4.25)));
+        Slot slot2 = new Slot("D3", new Drink("Mountain Melter", BigDecimal.valueOf(3.55)));
+
+        Item item1 = slot1.getProductInSlot();
+        Item item2 = slot2.getProductInSlot();
 
         Assert.assertEquals("A1", slot1.getLocation());
         Assert.assertEquals("D3", slot2.getLocation());
-        Assert.assertEquals("Candy", slot1.getProductInSlot().getProductType());
-        Assert.assertEquals("Drink", slot2.getProductInSlot().getProductType());
-        Assert.assertEquals("Snykkers", slot1.getProductInSlot().getProductName());
-        Assert.assertEquals("Mountain Melter", slot2.getProductInSlot().getProductName());
-        Assert.assertEquals("Yummy Yummy, So Sweet!", slot1.getProductInSlot().getDispenseMessage());
-        Assert.assertEquals("Glug Glug, Yum!", slot2.getProductInSlot().getDispenseMessage());
-        Assert.assertEquals(BigDecimal.valueOf(4.25), slot1.getProductInSlot().getPrice());
-        Assert.assertEquals(BigDecimal.valueOf(3.55), slot2.getProductInSlot().getPrice());
         Assert.assertEquals(5, slot1.getProductRemaining());
         Assert.assertEquals(5, slot2.getProductRemaining());
+        Assert.assertEquals("Candy", item1.getProductType());
+        Assert.assertEquals("Drink", item2.getProductType());
+        Assert.assertEquals("Snykkers", item1.getProductName());
+        Assert.assertEquals("Mountain Melter", item2.getProductName());
+        Assert.assertEquals("Yummy Yummy, So Sweet!", item1.getDispenseMessage());
+        Assert.assertEquals("Glug Glug, Yum!", item2.getDispenseMessage());
+        Assert.assertEquals(BigDecimal.valueOf(4.25), item1.getPrice());
+        Assert.assertEquals(BigDecimal.valueOf(3.55), item2.getPrice());
     }
 }
