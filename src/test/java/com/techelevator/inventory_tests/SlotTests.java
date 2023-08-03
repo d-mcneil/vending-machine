@@ -5,14 +5,21 @@ import com.techelevator.items.Drink;
 import com.techelevator.items.Item;
 import com.techelevator.inventory.Slot;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 
 public class SlotTests {
+    Slot slot1;
+
+    @Before
+    public void createSlot() {
+        slot1 = new Slot("A1", new Candy("Snykkers", BigDecimal.valueOf(4.25)));
+    }
+
     @Test
     public void constructor_creates_slot_with_correct_values(){
-        Slot slot1 = new Slot("A1", new Candy("Snykkers", BigDecimal.valueOf(4.25)));
         Slot slot2 = new Slot("D3", new Drink("Mountain Melter", BigDecimal.valueOf(3.55)));
 
         Item item1 = slot1.getProductInSlot();
@@ -30,5 +37,48 @@ public class SlotTests {
         Assert.assertEquals("Glug Glug, Yum!", item2.getDispenseMessage());
         Assert.assertEquals(BigDecimal.valueOf(4.25), item1.getPrice());
         Assert.assertEquals(BigDecimal.valueOf(3.55), item2.getPrice());
+    }
+
+    @Test
+    public void decrementProductRemaining_correctly_decrements_when_product_available() {
+        slot1.decrementProductRemaining();
+
+        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
+
+        Assert.assertTrue(wasDecrementedSuccessfully);
+        Assert.assertEquals(3, slot1.getProductRemaining());
+    }
+
+    @Test
+    public void decrementProductRemaining_does_not_decrement_when_product_sold_out() {
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+
+        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
+
+        Assert.assertFalse(wasDecrementedSuccessfully);
+        Assert.assertEquals(0, slot1.getProductRemaining());
+    }
+
+    @Test
+    public void decrementProductRemaining_does_not_decrement_when_product_sold_out_and_called_repeatedly() {
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+        slot1.decrementProductRemaining();
+
+        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
+
+        Assert.assertFalse(wasDecrementedSuccessfully);
+        Assert.assertEquals(0, slot1.getProductRemaining());
     }
 }

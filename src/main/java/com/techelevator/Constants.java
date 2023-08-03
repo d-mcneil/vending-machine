@@ -26,7 +26,11 @@ public class Constants {
     public static final String FINISHING_MENU_MESSAGE = "Transaction Completed";
     public static final String FINISHING_MENU_POST_MESSAGE = "Your new balance is $0.00";
     public static final String DISPLAY_MENU_MESSAGE = "These are your options to choose from:"; // TODO - remove colon?
-    public static final String[] MAIN_MENU_OPTIONS = {"(1) Display Vending Machine Items", "(2) Purchase", "(3) Exit"};
+    public static final String[] MAIN_MENU_OPTIONS = {
+            "(1) Display Vending Machine Items",
+            "(2) Purchase",
+            "(3) Exit"
+    };
     public static final String MAIN_MENU_MESSAGE = "Main Menu";
     public static final String MAIN_MENU_POST_MESSAGE = "Select An Option (1/2/3)";
     public static final String PURCHASE_MENU_MESSAGE = "Purchasing Menu";

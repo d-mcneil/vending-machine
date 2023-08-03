@@ -29,7 +29,7 @@ public class InventoryManager {
                 String productName = array[1];
                 BigDecimal price = new BigDecimal(array[2]);
                 String productType = array[3];
-                Item productToAdd = null;
+                Item productToAdd;
                 switch (productType) {
                     case DRINK:
                         productToAdd = new Drink(productName, price);
@@ -43,6 +43,8 @@ public class InventoryManager {
                     case CANDY:
                         productToAdd = new Candy(productName, price);
                         break;
+                    default:
+                        productToAdd = null;
                 }
 
                 inventory.add(new Slot(slotLocation, productToAdd));
@@ -50,7 +52,7 @@ public class InventoryManager {
             }
         } catch (FileNotFoundException e) {
             System.out.println("There was an error starting up the vending machine. Please try again later.");
-        }
+        } // TODO: figure out what to do about errors, and make sure all sout statements are in print manager
     }
 
     public boolean dispenseInventory(Slot slot) {
