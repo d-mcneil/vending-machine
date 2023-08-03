@@ -14,7 +14,7 @@ public class Slot {
         this.productRemaining = Constants.DEFAULT_VENDING_MACHINE_STOCK_PER_ITEM;
     }
 
-    public boolean decrementProductRemaining() { // TODO: test method
+    public boolean decrementProductRemaining() {
         if (this.productRemaining == 0) {
             return false; // no item to dispense, so don't decrement count
         }

@@ -43,9 +43,8 @@ public class SlotTests {
     public void decrementProductRemaining_correctly_decrements_when_product_available() {
         slot1.decrementProductRemaining();
 
-        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
-
-        Assert.assertTrue(wasDecrementedSuccessfully);
+        Assert.assertEquals(4, slot1.getProductRemaining());
+        Assert.assertTrue(slot1.decrementProductRemaining());
         Assert.assertEquals(3, slot1.getProductRemaining());
     }
 
@@ -55,11 +54,11 @@ public class SlotTests {
         slot1.decrementProductRemaining();
         slot1.decrementProductRemaining();
         slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
 
-        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
-
-        Assert.assertFalse(wasDecrementedSuccessfully);
+        Assert.assertEquals(1, slot1.getProductRemaining());
+        Assert.assertTrue(slot1.decrementProductRemaining());
+        Assert.assertEquals(0, slot1.getProductRemaining());
+        Assert.assertFalse(slot1.decrementProductRemaining());
         Assert.assertEquals(0, slot1.getProductRemaining());
     }
 
@@ -69,16 +68,13 @@ public class SlotTests {
         slot1.decrementProductRemaining();
         slot1.decrementProductRemaining();
         slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
-        slot1.decrementProductRemaining();
 
-        boolean wasDecrementedSuccessfully = slot1.decrementProductRemaining();
-
-        Assert.assertFalse(wasDecrementedSuccessfully);
+        Assert.assertEquals(1, slot1.getProductRemaining());
+        Assert.assertTrue(slot1.decrementProductRemaining());
+        Assert.assertEquals(0, slot1.getProductRemaining());
+        Assert.assertFalse(slot1.decrementProductRemaining());
+        Assert.assertFalse(slot1.decrementProductRemaining());
+        Assert.assertFalse(slot1.decrementProductRemaining());
         Assert.assertEquals(0, slot1.getProductRemaining());
     }
 }
