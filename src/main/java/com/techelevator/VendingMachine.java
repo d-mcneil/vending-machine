@@ -1,10 +1,9 @@
 package com.techelevator;
 
-import com.techelevator.Accounting.Account;
-import com.techelevator.Items.Item;
-import com.techelevator.Menus.*;
-import com.techelevator.Menus.Menu;
-import com.techelevator.Reports.Logger;
+import com.techelevator.accounting.Account;
+import com.techelevator.items.Item;
+import com.techelevator.menus.*;
+import com.techelevator.reports.Logger;
 import com.techelevator.console_managers.PrintManager;
 import com.techelevator.inventory.InventoryManager;
 import com.techelevator.inventory.Slot;
@@ -14,17 +13,17 @@ import java.util.Scanner;
 
 public class VendingMachine {
     // Pull in constants from CustomConstants class
-    private final String CHOICE_ONE = CustomConstants.CHOICE_ONE;
-    private final String CHOICE_TWO = CustomConstants.CHOICE_TWO;
-    private final String CHOICE_THREE = CustomConstants.CHOICE_THREE;
-    private final String GIVE_CHANGE = CustomConstants.GIVE_CHANGE;
-    private final String FEED_MONEY = CustomConstants.FEED_MONEY;
-    private final int DISPLAY_ITEM_MENU_CHARACTER_OFFSET = CustomConstants.DISPLAY_ITEM_MENU_CHARACTER_OFFSET;
-    private final int MAIN_MENU_CHARACTER_OFFSET = CustomConstants.MAIN_MENU_CHARACTER_OFFSET;
-    private final int PURCHASE_MENU_CHARACTER_OFFSET = CustomConstants.PURCHASE_MENU_CHARACTER_OFFSET;
-    private final int FINISHING_MENU_CHARACTER_OFFSET = CustomConstants.FINISHING_MENU_CHARACTER_OFFSET;
-    private final String PRODUCT_CODE_REGEX_EXPRESSION = CustomConstants.PRODUCT_CODE_REGEX_EXPRESSION;
-    private final String INVENTORY_FILE_PATH = CustomConstants.INVENTORY_FILE_PATH;
+    private final String CHOICE_ONE = Constants.CHOICE_ONE;
+    private final String CHOICE_TWO = Constants.CHOICE_TWO;
+    private final String CHOICE_THREE = Constants.CHOICE_THREE;
+    private final String GIVE_CHANGE = Constants.GIVE_CHANGE;
+    private final String FEED_MONEY = Constants.FEED_MONEY;
+    private final int DISPLAY_ITEM_MENU_CHARACTER_OFFSET = Constants.DISPLAY_ITEM_MENU_CHARACTER_OFFSET;
+    private final int MAIN_MENU_CHARACTER_OFFSET = Constants.MAIN_MENU_CHARACTER_OFFSET;
+    private final int PURCHASE_MENU_CHARACTER_OFFSET = Constants.PURCHASE_MENU_CHARACTER_OFFSET;
+    private final int FINISHING_MENU_CHARACTER_OFFSET = Constants.FINISHING_MENU_CHARACTER_OFFSET;
+    private final String PRODUCT_CODE_REGEX_EXPRESSION = Constants.PRODUCT_CODE_REGEX_EXPRESSION;
+    private final String INVENTORY_FILE_PATH = Constants.INVENTORY_FILE_PATH;
 
     // Initialize
     private final Scanner userInputScanner = new Scanner(System.in);

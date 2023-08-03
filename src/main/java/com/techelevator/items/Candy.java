@@ -1,17 +1,17 @@
-package com.techelevator.Items;
+package com.techelevator.items;
 
-import com.techelevator.CustomConstants;
+import com.techelevator.Constants;
 import java.math.BigDecimal;
 
 public class Candy extends Item
 {
     public Candy(String productName, BigDecimal price)
     {
-        super(productName, CustomConstants.CANDY, price);
+        super(productName, Constants.CANDY, price);
     }
 
     @Override
     public String getDispenseMessage() {
-        return CustomConstants.CANDY_DISPENSE_MESSAGE;
+        return Constants.CANDY_DISPENSE_MESSAGE;
     }
 }

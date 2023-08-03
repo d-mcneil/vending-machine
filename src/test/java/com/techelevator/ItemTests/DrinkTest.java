@@ -1,7 +1,7 @@
 package com.techelevator.ItemTests;
 
 
-import com.techelevator.Items.Drink;
+import com.techelevator.items.Drink;
 import org.junit.Assert;
 import org.junit.Test;
 

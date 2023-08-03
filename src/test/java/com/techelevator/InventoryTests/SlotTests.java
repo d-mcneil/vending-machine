@@ -1,8 +1,8 @@
 package com.techelevator.InventoryTests;
 
-import com.techelevator.Items.Candy;
-import com.techelevator.Items.Drink;
-import com.techelevator.Items.Item;
+import com.techelevator.items.Candy;
+import com.techelevator.items.Drink;
+import com.techelevator.items.Item;
 import com.techelevator.inventory.Slot;
 import org.junit.Assert;
 import org.junit.Test;

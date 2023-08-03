@@ -1,4 +1,4 @@
-package com.techelevator.Menus;
+package com.techelevator.menus;
 
 public class MainMenu extends Menu
 {

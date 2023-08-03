@@ -1,9 +1,8 @@
 package com.techelevator.MenuTests;
 
-import com.techelevator.Accounting.Account;
-import com.techelevator.Menus.FinishingMenu;
-import com.techelevator.Menus.Menu;
-import com.techelevator.Menus.PurchaseMenu;
+import com.techelevator.accounting.Account;
+import com.techelevator.menus.Menu;
+import com.techelevator.menus.PurchaseMenu;
 import org.junit.Assert;
 import org.junit.Test;
 

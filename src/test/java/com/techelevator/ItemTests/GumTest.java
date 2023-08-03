@@ -1,7 +1,7 @@
 package com.techelevator.ItemTests;
 
 
-import com.techelevator.Items.Gum;
+import com.techelevator.items.Gum;
 import org.junit.Assert;
 import org.junit.Test;
 

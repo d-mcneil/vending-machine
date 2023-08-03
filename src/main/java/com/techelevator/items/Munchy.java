@@ -1,17 +1,17 @@
-package com.techelevator.Items;
+package com.techelevator.items;
 
-import com.techelevator.CustomConstants;
+import com.techelevator.Constants;
 import java.math.BigDecimal;
 
 public class Munchy extends Item
 {
     public Munchy(String productName, BigDecimal price)
     {
-        super(productName, CustomConstants.MUNCHY, price);
+        super(productName, Constants.MUNCHY, price);
     }
 
     @Override
     public String getDispenseMessage() {
-        return CustomConstants.MUNCHY_DISPENSE_MESSAGE;
+        return Constants.MUNCHY_DISPENSE_MESSAGE;
     }
 }

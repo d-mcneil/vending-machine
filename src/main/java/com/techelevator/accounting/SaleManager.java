@@ -1,4 +1,4 @@
-package com.techelevator.Accounting;
+package com.techelevator.accounting;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

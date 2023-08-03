@@ -1,13 +1,13 @@
-package com.techelevator.Menus;
+package com.techelevator.menus;
 
-import com.techelevator.CustomConstants;
+import com.techelevator.Constants;
 import com.techelevator.inventory.InventoryManager;
 
 public class DisplayItemMenu extends Menu {
     public DisplayItemMenu(InventoryManager inventoryManager) {
         super(
                 inventoryManager.getInventoryOptionsAsDisplayStringArray()
-                , CustomConstants.DISPLAY_MENU_MESSAGE
+                , Constants.DISPLAY_MENU_MESSAGE
         );
     }
 }

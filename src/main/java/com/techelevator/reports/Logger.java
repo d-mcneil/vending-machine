@@ -1,12 +1,10 @@
-package com.techelevator.Reports;
+package com.techelevator.reports;
 
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
 
 public class Logger
 {

@@ -1,6 +1,6 @@
 package com.techelevator.AccountingTests;
 
-import com.techelevator.Accounting.SaleManager;
+import com.techelevator.accounting.SaleManager;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

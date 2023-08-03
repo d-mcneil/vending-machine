@@ -1,6 +1,6 @@
 package com.techelevator.ItemTests;
 
-import com.techelevator.Items.Candy;
+import com.techelevator.items.Candy;
 
 import org.junit.Assert;
 import org.junit.Test;

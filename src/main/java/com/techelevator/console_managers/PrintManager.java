@@ -1,26 +1,26 @@
 package com.techelevator.console_managers;
 
-import com.techelevator.CustomConstants;
-import com.techelevator.Menus.Menu;
+import com.techelevator.Constants;
+import com.techelevator.menus.Menu;
 import com.techelevator.inventory.Slot;
 
 public class PrintManager {
     public void printBanner(String message, int characterOffset) {
         int messageLength = message.length();
         System.out.println();
-        System.out.println(CustomConstants.starChar.repeat(messageLength - characterOffset));
-        System.out.print(CustomConstants.starChar + " ");
+        System.out.println(Constants.MENU_CHAR.repeat(messageLength - characterOffset));
+        System.out.print(Constants.MENU_CHAR + " ");
         System.out.print(message);
-        System.out.println(" " + CustomConstants.starChar);
-        System.out.println(CustomConstants.starChar.repeat(messageLength - characterOffset));
+        System.out.println(" " + Constants.MENU_CHAR);
+        System.out.println(Constants.MENU_CHAR.repeat(messageLength - characterOffset));
     }
 
     public void printWelcomeBanner() {
-        printBanner(CustomConstants.welcomeMessage, 8);
+        printBanner(Constants.WELCOME_MESSAGE, 8);
     }
 
     public void printExitBanner() {
-        printBanner(CustomConstants.exitMessage, 10);
+        printBanner(Constants.EXIT_MESSAGE, 10);
     }
 
     public void printMenu (Menu menu, int characterOffset) {
@@ -69,7 +69,7 @@ public class PrintManager {
     public void printCommandPrompt(String prompt) {
         System.out.println();
         System.out.println();
-        System.out.print(CustomConstants.starChar + " " + prompt + " ---> ");
+        System.out.print(Constants.MENU_CHAR + " " + prompt + " ---> ");
     }
 
     public void printMessage(String message) {

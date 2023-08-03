@@ -1,6 +1,6 @@
 package com.techelevator.ItemTests;
 
-import com.techelevator.Items.Munchy;
+import com.techelevator.items.Munchy;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
 package com.techelevator.inventory;
 
-import com.techelevator.CustomConstants;
-import com.techelevator.Items.*;
+import com.techelevator.Constants;
+import com.techelevator.items.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,10 +15,10 @@ public class InventoryManager {
 
     public InventoryManager(String pathName) {
         File inventoryFile = new File(pathName);
-        final String DRINK = CustomConstants.DRINK;
-        final String GUM = CustomConstants.GUM;
-        final String MUNCHY = CustomConstants.MUNCHY;
-        final String CANDY = CustomConstants.CANDY;
+        final String DRINK = Constants.DRINK;
+        final String GUM = Constants.GUM;
+        final String MUNCHY = Constants.MUNCHY;
+        final String CANDY = Constants.CANDY;
 
         // Read from inventoryFile and set inventory
         try (Scanner scanner = new Scanner(inventoryFile)) {

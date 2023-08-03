@@ -1,7 +1,7 @@
 package com.techelevator.MenuTests;
 
-import com.techelevator.Menus.DisplayItemMenu;
-import com.techelevator.Menus.Menu;
+import com.techelevator.menus.DisplayItemMenu;
+import com.techelevator.menus.Menu;
 import com.techelevator.inventory.InventoryManager;
 import org.junit.Assert;
 import org.junit.Before;

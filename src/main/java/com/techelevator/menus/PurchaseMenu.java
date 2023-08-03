@@ -1,7 +1,6 @@
-package com.techelevator.Menus;
+package com.techelevator.menus;
 
-import com.techelevator.Accounting.Account;
-import com.techelevator.CustomConstants;
+import com.techelevator.accounting.Account;
 
 import java.math.RoundingMode;
 

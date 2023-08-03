@@ -1,6 +1,6 @@
 package com.techelevator.inventory;
 
-import com.techelevator.Items.Item;
+import com.techelevator.items.Item;
 
 public class Slot {
     private String location;
