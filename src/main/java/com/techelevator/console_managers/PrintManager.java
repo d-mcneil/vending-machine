@@ -34,7 +34,7 @@ public class PrintManager {
         System.out.println();
         if (menu.getPostMessage() != null) {
             System.out.print(menu.getPostMessage());
-            if (menu.isCommandLinePrompt()) {
+            if (menu.isPostMessageACommandLinePrompt()) {
                 System.out.print(" ---> ");
             } else {
                 System.out.println();

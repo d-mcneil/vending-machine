@@ -1,22 +1,18 @@
 package com.techelevator.menus;
 
-public abstract class Menu
-{
-    private final String[] menuOptions;
+public abstract class Menu {
     private final String menuMessage;
+    private final String[] menuOptions;
     private String postMessage;
-    private boolean isCommandLinePrompt;
+    private boolean isPostMessageACommandLinePrompt;
 
-    public Menu(String[] menuOptions, String menuMessage, String postMessage, boolean isCommandLinePrompt)
-    {
-        this.menuOptions = menuOptions;
-        this.menuMessage = menuMessage;
+    public Menu(String menuMessage, String[] menuOptions, String postMessage, boolean isPostMessageACommandLinePrompt) {
+        this(menuMessage, menuOptions);
         this.postMessage = postMessage;
-        this.isCommandLinePrompt = isCommandLinePrompt;
+        this.isPostMessageACommandLinePrompt = isPostMessageACommandLinePrompt;
     }
 
-    public Menu(String[] menuOptions, String menuMessage)
-    {
+    public Menu(String menuMessage, String[] menuOptions) {
         this.menuOptions = menuOptions;
         this.menuMessage = menuMessage;
     }
@@ -33,8 +29,7 @@ public abstract class Menu
         return postMessage;
     }
 
-    public boolean isCommandLinePrompt() {
-        return isCommandLinePrompt;
+    public boolean isPostMessageACommandLinePrompt() {
+        return isPostMessageACommandLinePrompt;
     }
-
 }

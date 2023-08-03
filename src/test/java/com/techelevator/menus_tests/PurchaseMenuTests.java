@@ -11,7 +11,7 @@ public class PurchaseMenuTests
 
 
     @Test
-    public void purchase_menu_constructor_creates_menu_with_correct_values()
+    public void constructor_creates_menu_with_correct_values()
     {
 
         Account account = new Account();
@@ -25,7 +25,7 @@ public class PurchaseMenuTests
         Assert.assertEquals("(3) Finish Transaction", options[3]);
         Assert.assertEquals("Purchasing Menu", menu.getMenuMessage());
         Assert.assertEquals("Select An Option (1/2/3)", menu.getPostMessage());
-        Assert.assertTrue(menu.isCommandLinePrompt());
+        Assert.assertTrue(menu.isPostMessageACommandLinePrompt());
 
     }
 
@@ -44,7 +44,7 @@ public class PurchaseMenuTests
         Assert.assertEquals("(3) Finish Transaction", options[3]);
         Assert.assertEquals("Purchasing Menu", menu.getMenuMessage());
         Assert.assertEquals("Select An Option (1/2/3)", menu.getPostMessage());
-        Assert.assertTrue(menu.isCommandLinePrompt());
+        Assert.assertTrue(menu.isPostMessageACommandLinePrompt());
 
     }
 }

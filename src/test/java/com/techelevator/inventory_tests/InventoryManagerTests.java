@@ -14,7 +14,7 @@ public class InventoryManagerTests {
 
     @Before
     public void createInventoryManager() {
-        inventoryManager = new InventoryManager("src/test/java/com/techelevator/InventoryTests/test.csv");
+        inventoryManager = new InventoryManager("src/test/java/com/techelevator/inventory_tests/test.csv");
     }
 
     @Test

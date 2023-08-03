@@ -12,18 +12,17 @@ public class DisplayItemMenuTests {
 
     @Before
     public void createInventoryManager() {
-        inventoryManager = new InventoryManager("src/test/java/com/techelevator/MenuTests/test.csv");
-
+        inventoryManager = new InventoryManager("src/test/java/com/techelevator/menus_tests/test.csv");
     }
 
     @Test
-    public void menu_constructor_creates_menu_with_correct_values() {
+    public void constructor_creates_menu_with_correct_values() {
         Menu menu = new DisplayItemMenu(inventoryManager);
 
         String[] options = menu.getMenuOptions();
 
         Assert.assertNull(menu.getPostMessage());
-        Assert.assertFalse(menu.isCommandLinePrompt());
+        Assert.assertFalse(menu.isPostMessageACommandLinePrompt());
         Assert.assertEquals("These are your options to choose from:", menu.getMenuMessage());
         Assert.assertEquals("A1  $1.65  Remaining: 5        U-Chews", options[0]);
         Assert.assertEquals("B4  $3.55  Remaining: 5        Mountain Melter", options[1]);

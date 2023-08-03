@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 public class FinishingMenuTests {
     @Test
-    public void menu_constructor_creates_menu_with_correct_values(){
+    public void constructor_creates_menu_with_correct_values(){
         Account account = new Account();
         account.feedMoney(5);
         account.deductFromBalance(BigDecimal.valueOf(0.60));
@@ -24,6 +24,6 @@ public class FinishingMenuTests {
         Assert.assertEquals("Nickels: 1", options[3]);
         Assert.assertEquals("Transaction Completed", menu.getMenuMessage());
         Assert.assertEquals("Your new balance is $0.00", menu.getPostMessage());
-        Assert.assertFalse(menu.isCommandLinePrompt());
+        Assert.assertFalse(menu.isPostMessageACommandLinePrompt());
     }
 }
