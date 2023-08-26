@@ -2,7 +2,7 @@
 
 Teamed up with a fellow software developer to design a Java-based, virtual vending machine. Demonstrated proficiency in applying the 4 main principles of object-oriented programming, resulting in a well-structured and efficient program. Utilized file I/O operations effectively to track inventory and log user activity.
 ---
-![Virtual Vending Machine](https://github.com/d-mcneil/vending-machine/assets/108340538/14a2f7eb-c2af-426b-9694-47190f864f39)
+
 
 ## Tech Elevator - Module 1 Capstone - Vending Machine Software
 
