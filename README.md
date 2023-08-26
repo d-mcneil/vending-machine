@@ -1,4 +1,11 @@
-## Module 1 Capstone - Vending Machine Software
+<h1 align="center">Virtual Vending Machine</h1>
+
+Teamed up with a fellow software developer to design a Java-based, virtual vending machine. Demonstrated proficiency in applying the 4 main principles of object-oriented programming, resulting in a well-structured and efficient program. Utilized file I/O operations effectively to track inventory and log user activity.
+---
+![Flashcards Study Application API](https://github.com/d-mcneil/flashcards/assets/108340538/d009e301-e570-4d37-b89c-7a4d990136d1)
+![Virtual Vending Machine](https://github.com/d-mcneil/vending-machine/assets/108340538/14a2f7eb-c2af-426b-9694-47190f864f39)
+
+## Tech Elevator - Module 1 Capstone - Vending Machine Software
 
 You're developing an application for the newest vending machine distributor,
 Umbrella Corp. They've released a new vending machine, Vendo-Matic 800, that's integrated
