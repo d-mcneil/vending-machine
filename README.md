@@ -1,6 +1,6 @@
 <h1 align="center">Virtual Vending Machine</h1>
 
-Teamed up with a fellow software developer to design a Java-based, virtual vending machine. Demonstrated proficiency in applying the 4 main principles of object-oriented programming, resulting in a well-structured and efficient program. Utilized file I/O operations effectively to track inventory and log user activity. 
+Collaborated with a fellow software developer to design a **Java**-based, virtual vending machine. Demonstrated proficiency in applying the 4 main principles of **object-oriented programming**, resulting in an extensible, maintainable codebase. Utilized **file I/O operations** effectively to track inventory and log user activity. Wrote **unit tests** to ensure proper functionality.  
   
 [See Project Live](https://replit.com/@dmcneil/vending-machine?v=1) 
     
