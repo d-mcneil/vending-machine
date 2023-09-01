@@ -1,10 +1,13 @@
 <h1 align="center">Virtual Vending Machine</h1>
 
-Collaborated with a fellow software developer to design a **Java**-based, virtual vending machine. Demonstrated proficiency in applying the 4 main principles of **object-oriented programming**, resulting in an extensible, maintainable codebase. Utilized **file I/O operations** effectively to track inventory and log user activity. Wrote **unit tests** to ensure proper functionality.  
+- Collaborated with a fellow software developer to design a **Java**-based, virtual vending machine
+- Demonstrated proficiency in applying the 4 main principles of **object-oriented programming**, resulting in an extensible, maintainable codebase
+- Utilized file **I/O operations** effectively to track inventory and log user activity
+- Wrote **unit tests** to ensure proper functionality
   
 [See Project Live](https://replit.com/@dmcneil/vending-machine?v=1) 
     
-![Virtual Vending Machine](https://github.com/d-mcneil/vending-machine/assets/108340538/1fbf1f2f-24f2-4b89-a8d6-97be3393b9ee)
+![Virtual Vending Machine Banner](https://github.com/d-mcneil/vending-machine/assets/108340538/1fbf1f2f-24f2-4b89-a8d6-97be3393b9ee)
 
 
 ## Tech Elevator - Module 1 Capstone - Vending Machine Software
